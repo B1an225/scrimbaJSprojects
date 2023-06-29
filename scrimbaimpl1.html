@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        /* NAV */
+
+        nav {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 10px;
+            /* text-align: RIG; */
+            position: fixed;
+            top: 0;
+            width: 98%;
+            z-index: 1;
+        }
+
+        .logo {
+            margin-right: 20px;
+        }
+
+        .logo img {
+            height: 100px;
+            width: 150px;
+        }
+
+        .menu {
+            list-style-type: none;
+            display: flex;
+            justify-content: end;
+            padding: 15px;
+            width: 100%;
+            /* border: 1px solid white; */
+
+        }
+
+        .menu li {
+            margin-right: 10px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: rgb(191, 191, 191);
+            font-size: 18px;
+        }
+
+        .menu li a:hover {
+            text-decoration: none;
+            color: rgb(88, 141, 10);
+        }
+
+        /* NAV */
+
+        h2 {
+            margin-top: 1px;
+            text-align: center;
+            color: green
+        }
+
+        p {
+            margin-top: 0px;
+            width: auto;
+            height: auto;
+            padding-right: 3px;
+            padding-bottom: 3px;
+            padding-left: 3px;
+        }
+
+        @keyframes itemAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+
+        .item {
+            background-color: #161a1d;
+            padding: 15px;
+            margin: 35px;
+            color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            /* padding-bottom: 5px ; */
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+            height: 400px;
+            width: 250px;
+            border: 2px solid #076630;
+            border-radius: 5px;
+            box-shadow: 0px 0px 18px 7px rgb(77, 180, 29);
+
+            animation-name: itemAnimation;
+            animation-duration: 4s;
+
+        }
+
+
+
+
+        .item:hover {
+            transform: scale(1.1);
+            transition: 0.4s;
+            border: 2px solid #cca9a9;
+            box-shadow: 0px 0px 10px 7px rgb(125, 80, 80);
+            color: #7e6b6c;
+
+        }
+
+        .button-color {
+            background-color: #161a1d;
+            color: white;
+            font-size: 20px;
+            border: 2px solid whitesmoke;
+            border-radius: 5px;
+            /* margin-left: 75px; */
+            padding: 4px 20px;
+        }
+
+
+        .button-color:hover {
+            background-color: rgb(18, 185, 18);
+            color: black;
+            border-color: black
+        }
+
+
+        .container5 {
+
+            color: black;
+            width: 90%;
+            background-color: whitesmoke;
+            padding: 70px 0;
+            display: flex;
+
+            margin: 0 auto;
+
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+
+        }
+
+        .cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            display: none;
+            height: 60%;
+            width: 25%
+        }
+
+        .btn-purchase {
+            background: white;
+            color: black;
+            margin-top: 10px;
+            border: 1px solid black;
+            padding: 10px 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        #list-of-items {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        #list-of-items li {
+            font-size: 20px;
+            background-color: rgb(235, 201, 32);
+            padding: 15px;
+            border-radius: 8px;
+            flex-grow: 1;
+            text-align: center;
+            box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2)
+        }
+
+        .x-container {
+            display: inline-block;
+
+            width: 20px;
+            height: 20px;
+            padding: 3px;
+
+            border-radius: 9999px;
+            transition: all 400ms;
+            /* margin-left: ; */
+        }
+
+
+        .x-container:hover {
+            background-color: black;
+            opacity: 0.4;
+        }
+
+        .x-mark {
+            color: white;
+            font-size: 18px;
+            line-height: 18px;
+            opacity: 1 !important;
+            /* margin-right: 8px; */
+            /* padding: 4px; */
+
+            /* background-color: black; */
+            cursor: pointer;
+
+        }
+
+        .close-button{
+            margin-left:340px;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="R.gif" alt="Logo">
+        </div>
+        <ul class="menu">
+            <li ><a href="http://127.0.0.1:5501/scrimbaimpl/scrimbaimpl.html" target="_blank">Groceries</a></li>
+            <li style="color:#076630"><a href="#">Phones</a></li>
+            <li><a href="#">Bikes</a></li>
+            <li><a href="#">Sports</a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+
+
+
+
+    <div class="container5">
+
+        <div class="item">
+            <img src="project1.jpg" alt="Product 1" width=100%; height="58%">
+            <h2 style="margin-top: 1px;text-align: center;" id="item1">Bread</h2>
+            <p>product 1.</p>
+            <button class="button-color" onclick=showCartAndIncrement(1)>Buy</button>
+            <p class="price" id="price1">$92</p>
+        </div>
+        <div class="item">
+            <img src="project2.jpg" alt="Product 1" width=100%; height="58%">
+            <h2 id="item2">Butter</h2>
+            <p>product 2.</p>
+            <button class="button-color" onclick=showCartAndIncrement(2)>Buy</button>
+            <p class="price" id="price2">$86</p>
+        </div>
+        <div class="item">
+            <img src="project3.jpg" alt="Product 1" width=100%; height="58%">
+            <h2 id="item3">Pickel</h2>
+            <p>product 3.</p>
+            <button class="button-color" onclick=showCartAndIncrement(3)>Buy</button>
+            <p class="price" id="price3">$76</p>
+        </div>
+        <div class="item">
+            <img src="project4.webp" alt="Product 1" width=100%; height="58%">
+            <h2 id="item4">Honey</h2>
+            <p>product 4.</p>
+            <button class="button-color" onclick=showCartAndIncrement(4)>Buy</button>
+            <p class="price" id="price4">$66</p>
+        </div>
+        <div class="item">
+            <img src="project5.jpg" alt="Product 1" width=100%; height="58%">
+            <h2 id="item5">Vegetables</h2>
+            <p>product 5.</p>
+            <button class="button-color" onclick=showCartAndIncrement(5)>Buy</button>
+            <p class="price" id="price5">$56</p>
+
+
+        </div>
+        <div class="item">
+            <img src="project6.jpg" alt="Product 1" width=100%; height="58%">
+            <h2 id="item6">Jam</h2>
+            <p>product 6.</p>
+            <button class="button-color" onclick=showCartAndIncrement(6)>Buy</button>
+            <p class="price" id="price6">$55</p>
+        </div>
+        <div class="item">
+            <img src="project6.jpg" alt="Product 1" width=100%; height="58%">
+            <h2 id="item7">Jam</h2>
+            <p>product 7.</p>
+            <button class="button-color" onclick=showCartAndIncrement(7)>Buy</button>
+            <p class="price" id="price7">$66</p>
+        </div>
+        <div class="item">
+            <img src="project7.jpg" alt="Product 1" width=100%; height="58%">
+            <h2 id="item8">Honey</h2>
+            <p>product 8.</p>
+            <button class="button-color" onclick=showCartAndIncrement(8)>Buy</button>
+            <p class="price" id="price8">$77</p>
+        </div>
+        <div class="item">
+            <img src="project8.jpg" alt="Product 1" width=100%; height="58%">
+            <h2 id="item9">Fruits</h2>
+            <p>product 9.</p>
+            <button class="button-color" onclick=showCartAndIncrement(9)>Buy</button>
+            <p class="price" id="price9">$88</p>
+        </div>
+        <div class="item">
+            <img src="project9.jpg" alt="Product 1" width=100%; height="58%">
+            <h2 id="item10">Fish</h2>
+            <p>product 10.</p>
+            <button class="button-color" onclick=showCartAndIncrement(10)>Buy</button>
+            <p class="price" id="price10">$99</p>
+        </div>
+    </div>
+
+
+    <!-- Cart content goes here -->
+
+    <div class="cart" id="cart">
+        <button class="close-button" onclick="hideCart()">&times;</button>
+        <h1 style="color:orange">Cart&#128722;</h1>
+        <p><b>Item : Price</b></p>
+        <ul id="list-of-items">
+
+        </ul>
+
+        <h2 style="color:black" id="added-to-cart">Total Price:<span id="clicked-on-price">0</span>
+        </h2>
+
+
+
+        <span>
+            <button onclick="add(); purchase();" class="btn-purchase">Purchase</button>
+            <p id="errorMessage" style="color:red"></p>
+        </span>
+
+    </div>
+
+
+    <script src="scrimbaimpl1.js"></script>
+
+
+    <footer
+        style="color:aliceblue;text-align: center;padding: 20px 0; background-color: rgb(1, 190, 1); width: 100%;height: auto;">
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+        <cite> -- By Blan Sandeep Lewis</cite>
+
+    </footer>
+
+   
+</body>
+
+</html>
