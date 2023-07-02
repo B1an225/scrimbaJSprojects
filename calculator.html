@@ -1,0 +1,46 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="calculator">
+        <span id="num1-el"></span>
+        <span id="num2-el"></span>
+        <br>
+        <div class="button-row">
+            <button onclick="appendNumber(7)">7</button>
+            <button onclick="appendNumber(8)">8</button>
+            <button onclick="appendNumber(9)">9</button>
+        </div>
+        <div class="button-row">
+            <button onclick="appendNumber(4)">4</button>
+            <button onclick="appendNumber(5)">5</button>
+            <button onclick="appendNumber(6)">6</button>
+        </div>
+        <div class="button-row">
+            <button onclick="appendNumber(1)">1</button>
+            <button onclick="appendNumber(2)">2</button>
+            <button onclick="appendNumber(3)">3</button>
+        </div>
+        <div class="button-row">
+            <button onclick="appendNumber(0)">0</button>
+        </div>
+        <br>
+        <button onclick="add()">Add</button>
+        <button onclick="subtract()">Subtract</button>
+        <button onclick="divide()">Divide</button>
+        <button onclick="multiply()">Multiply</button>
+        <br>
+        <span id="sum-el">Sum: </span>
+        <br>
+        <br>
+        <div class="button-row">
+            <button onclick="clearCalculator()">Clear</button>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>
+
